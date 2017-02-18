@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_task"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_gravity="center" android:orientation="vertical"
+    android:clickable="true">
+
+    <!-- db save progress -->
+    <ProgressBar
+        android:id="@+id/save_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/task_entry_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contextClickable="true"
+        android:background="#7fa87f"
+        android:clickable="true">
+
+        <LinearLayout
+            android:id="@+id/edit_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <EditText
+                    android:id="@+id/taskName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/taskName"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+                <TextView
+                    android:id="@+id/taskDue"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Due Date"
+                    android:elegantTextHeight="false"
+                    android:textSize="20sp"
+                    android:textColor="#fff5f5f5" />
+                <DatePicker
+                    android:id="@+id/dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:spinnersShown="true" />
+                <EditText
+                    android:id="@+id/taskNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/taskNote"
+                    android:inputType="textMultiLine"
+                    android:maxLines="2"/>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/lbl_spinner"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Priority:"
+                    android:elegantTextHeight="false"
+                    android:textSize="20sp"
+                    android:textColor="#fff5f5f5" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"
+                    android:id="@+id/chkLow"
+                    android:layout_gravity="right"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:id="@+id/chkMedium"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High"
+                    android:id="@+id/chkHigh"
+                    android:checked="true" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/save_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/saveTask"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/cancel_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dismiss"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
